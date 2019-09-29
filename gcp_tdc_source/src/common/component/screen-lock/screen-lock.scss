@@ -1,0 +1,50 @@
+.screen-lock-page {
+  position: fixed !important;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding-top: 70px;
+  background: radial-gradient(
+    ellipse at center,
+    #1f3649 0,
+    #17253d 44%,
+    #040d11 100%
+  );
+  @at-root .container {
+    width: 80%;
+    margin: auto;
+    .pattern-logo {
+      font-size: 22px;
+      color: #ddd;
+    }
+    .pattern-container {
+      text-align: center;
+      .pattern-title {
+        color: #fff;
+        margin-bottom: 20px;
+        letter-spacing: 0.3px;
+        font-size: 20px;
+      }
+      > p {
+        color: #e0e0e0;
+        width: 310px;
+        margin: 13px auto;
+      }
+      .patt-holder {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 14px;
+        margin: 0 auto 40px;
+      }
+    }
+  }
+  .antui-clock {
+    bottom: 50px;
+    color: #fff;
+    padding: 0;
+    position: absolute;
+    right: 50px;
+    width: auto;
+  }
+}

@@ -1,0 +1,16 @@
+@import "./theme-var/var.scss";
+
+.el-menu {
+  background: #2f4050;
+  .el-menu-item {
+    color: #fff;
+    &:hover {
+      color: #303133;
+    }
+    &.is-active {
+      color: #36c6d3;
+      background-color: #2c3542;
+      border-left: 4px solid #36c6d3;
+    }
+  }
+}

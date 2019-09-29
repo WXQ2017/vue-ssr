@@ -107,7 +107,7 @@ export class ConfigAdapter implements IConfigAdapter {
     this.hosts = apiConfig.hosts;
   }
   dealConfig() {
-    this.local = siteInfo.local;
-    this.remote = siteInfo.remote;
+    // this.local = siteInfo.local;
+    // this.remote = siteInfo.remote;
   }
 }

@@ -1,7 +1,7 @@
 import { IApiConfig } from "../../lib/source/config";
 export const apiConfig: IApiConfig = {
   hosts: {
-    apiHost: { dir: "" },
+    apiHost: { dir: "/gcp-tdc-api" },
   },
   post: {
     tiralSum: "apiHost:/homeSearch/trialCount",

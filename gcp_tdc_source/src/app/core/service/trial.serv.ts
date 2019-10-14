@@ -1,9 +1,9 @@
-import promiseXHR from "../../../lib/source/fetch";
+import { BaseService } from "./base.serv";
 interface ITrialService {
   tiralSum(): Promise<any>;
 }
-export default class TrialService implements ITrialService {
+export default class TrialService extends BaseService implements ITrialService {
   public tiralSum() {
-    return promiseXHR("post", "tiralSum", {});
+    return this.proxyHttp.post("tiralSum", {});
   }
 }

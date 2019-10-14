@@ -1,0 +1,14 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": "last 2 versions, ie 10",
+        "modules": false
+      }
+    ]
+  ],
+  "plugins": ["transform-vue-jsx"],
+  "comments": false,
+  "env": {}
+}

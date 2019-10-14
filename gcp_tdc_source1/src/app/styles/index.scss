@@ -1,0 +1,295 @@
+// @import "./antd.less";
+@import "../assets/custom-00C587/index.css";
+// @import "../assets/custom-36C6D3/index.css";
+@import "element-ui.scss";
+@import "./common.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  // font-size: calc(112.5% + 4 * (100vw - 600px) / 400);
+  // font-family: "Tahoma", "Lucida Grande", "Verdana", "Microsoft Yahei",
+  //   "PingFang SC Medium", "STXihei", "hei", sans-serif;
+  font-family: "Roboto", "Helvetica Neue", "Helvetica", "Tahoma", "Arial",
+    "PingFang SC Medium", "Microsoft YaHei", "Lucida Grande", "Verdana",
+    "STXihei", "hei", sans-serif;
+  line-height: 1.5;
+  background: #f3f6fd;
+}
+.full-page {
+  min-height: 100vh !important;
+}
+p {
+  margin: 0;
+}
+
+.m-top-5 {
+  margin-top: 5px;
+}
+
+.m-top-6 {
+  margin-top: 6px;
+}
+
+.m-top-10 {
+  margin-top: 10px;
+}
+
+.m-top-20 {
+  margin-top: 20px !important;
+}
+
+.m-top-25 {
+  margin-top: 25px !important;
+}
+
+.m-top-30 {
+  margin-top: 30px;
+}
+
+.m-right-10 {
+  margin-right: 10px;
+}
+
+.m-right-20 {
+  margin-right: 20px;
+}
+
+.m-bottom-0 {
+  margin-bottom: 0 !important;
+}
+
+.m-bottom-6 {
+  margin-bottom: 6px;
+}
+
+.m-bottom-9 {
+  margin-bottom: 9px;
+}
+
+.m-bottom-10 {
+  margin-bottom: 10px;
+}
+
+.m-bottom-20 {
+  margin-bottom: 20px;
+}
+
+.m-bottom-25 {
+  margin-bottom: 25px;
+}
+
+.m-left-10 {
+  margin-left: 10px;
+}
+
+.m-left-15 {
+  margin-left: 15px;
+}
+
+.m-left-20 {
+  margin-left: 20px;
+}
+
+.m-left-54 {
+  margin-left: 54px;
+}
+
+.m-left-110 {
+  margin-left: 110px;
+}
+
+.m-right-40 {
+  margin-right: 40px;
+}
+
+.p-top-0 {
+  padding-top: 0px;
+}
+
+.p-top-9 {
+  padding-top: 9px;
+}
+
+.p-bottom-0 {
+  padding-bottom: 0;
+}
+
+.p-bottom-9 {
+  padding-bottom: 9px;
+}
+
+.p-top-10 {
+  padding-top: 10px;
+}
+
+.p-top-15 {
+  padding-top: 15px;
+}
+
+.p-left-10 {
+  padding-left: 10px;
+}
+
+.p-bottom-10 {
+  padding-bottom: 10px;
+}
+
+.p-left-20 {
+  padding-left: 20px;
+}
+
+.p-left-28 {
+  padding-left: 28px;
+}
+
+.p-left-56 {
+  padding-left: 56px;
+}
+
+.p-bottom-18 {
+  padding-bottom: 18px;
+}
+
+.p-left-18 {
+  padding-left: 18px;
+}
+
+a {
+  color: $--color-primary;
+  text-decoration: none;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.text-cool {
+  color: #3b85da;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+.a4-page {
+  width: 21cm;
+  min-height: 29.7cm;
+  padding: 1cm 2cm;
+  background: #fff;
+  margin: 20px auto;
+}
+
+.multi-line-ellipsis {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.tow-line-ellipsis {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.single-line-ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: #f1f1f1;
+  -webkit-border-radius: 6px;
+  -webkit-box-shadow: inset 0 0 2px #e5e5e5;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  height: 8px;
+  background-color: #d1cfcf;
+  -webkit-border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  width: 5px;
+  background-color: #d1cfcf;
+  -webkit-border-radius: 6px;
+}
+.s-noscrollx {
+  overflow-x: hidden;
+}
+.page-module {
+  .top-bar {
+    display: flex;
+    line-height: 37px;
+
+    h4 {
+      font-size: 24px;
+      margin: 0;
+      font-family: PingFang-SC-Bold;
+      color: #2c3e5b;
+    }
+
+    .btn-box {
+      flex: 1;
+      text-align: right;
+    }
+  }
+}
+
+// iconfont
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}

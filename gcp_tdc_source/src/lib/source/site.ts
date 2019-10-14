@@ -1,6 +1,6 @@
 const siteInfo = {
   DEV: {
-    remote: "shuwen.test.trial.link:18081",
+    remote: "test.trial.link:18081",
     local: "192.168.1.70:8100",
     appID: "xxx",
     protocol: "http:",
@@ -14,11 +14,13 @@ const siteInfo = {
   UAT: {
     remote: "uat.trial.link:18080",
     local: "lbnweb.haveoo.com",
+    appID: "xxx",
     protocol: "http:",
   },
   MASTER: {
     remote: "trial.link",
     local: "lbnweb.xylbn.cn",
+    appID: "xxx",
     protocol: "https:",
   },
 };

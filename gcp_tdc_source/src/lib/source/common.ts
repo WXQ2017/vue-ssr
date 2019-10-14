@@ -1,6 +1,6 @@
-import { apiConfig } from "../../app/config/api.conf";
 import { IConfigAdapter, ConfigAdapter } from "./config";
 import { Factory } from "./factory";
+import { apiConfig, serverConfig } from "../../app/config";
 export interface ICommon {
   /**
    * 去两端空格
@@ -13,13 +13,18 @@ export interface ICommon {
    * @param apiKey Api的配置key
    * @param method HTTP method (e.g. 'GET', 'POST', etc)
    */
-  dealPath(apiKey: string, method: string): string;
+  dealWithUrl(apiKey: string, method: string): string;
 }
+export type ICommonConstructor = new () => ICommon;
+export function createCommon(ctor: ICommonConstructor): ICommon {
+  return new ctor();
+}
+
 export class Common {
   private configAdapter: IConfigAdapter;
 
   constructor() {
-    this.configAdapter = Factory.createConfigAdapter();
+    this.configAdapter = Factory.createConfigAdapter(apiConfig, serverConfig);
   }
   public dealWithUrl(apiKey = "", method = "GET"): string {
     let api = "";
@@ -34,7 +39,7 @@ export class Common {
       const path = api.split(":");
       path[0] = this.trim(path[0]);
       path[1] = this.trim(path[1]);
-      console.log;
+      
       const host: any = this.configAdapter.hosts[path[0]];
       const domain =
         host && host.domain ? host.domain : this.configAdapter.domain;

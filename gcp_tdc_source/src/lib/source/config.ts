@@ -8,6 +8,7 @@ export interface IHost {
 export interface ISite {
   local: string;
   remote: string;
+  otherRemotes?: { [key: string]: string };
   appID?: string;
   protocol?: string;
 }
@@ -30,7 +31,7 @@ export interface IServerConfig {
   debug: boolean;
   protocol: string;
   publicPath: string;
-  sites: ISites;
+  site: ISite;
   successCode: string;
   successCallback?: <T>(
     res: T,
@@ -81,6 +82,12 @@ export interface IConfigAdapter {
   hosts: IHosts;
   protocol: string;
   domain: string;
+  readonly successCode: string;
+  failCallback?: <T>(
+    res: T,
+    resolve: (value?: T | PromiseLike<T> | undefined) => void,
+    reject: any,
+  ) => void;
 }
 
 export type IConfigAdapterConstructor = new (
@@ -100,14 +107,30 @@ export class ConfigAdapter implements IConfigAdapter {
   hosts: IHosts;
   protocol: string;
   domain: string;
+  otherDomain: { [key: string]: string };
+  localSite: string;
   local: string;
   remote: string;
   appID?: string;
-  constructor(siteInfo: ISite, apiConfig: IApiConfig) {
+  curSite: ISite;
+  serverConfig: IServerConfig;
+  successCode: string;
+  constructor(apiConfig: IApiConfig, serverConfig: IServerConfig) {
+    this.serverConfig = serverConfig;
     this.hosts = apiConfig.hosts;
+    this.successCode = serverConfig.successCode;
+    this.dealConfig();
   }
   dealConfig() {
-    // this.local = siteInfo.local;
-    // this.remote = siteInfo.remote;
+    this.curSite = !!this.serverConfig.site
+      ? this.serverConfig.site
+      : { local: window.location.host, remote: window.location.host };
+    this.domain = this.curSite.remote;
+    this.otherDomain = this.curSite.otherRemotes || {};
+    this.localSite =
+      location.protocol +
+      "//" +
+      this.curSite.local +
+      this.serverConfig.publicPath;
   }
 }

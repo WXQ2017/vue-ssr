@@ -1,0 +1,33 @@
+.slide {
+  width: 200px;
+  color: red;
+}
+.head-logo {
+  font-size: 30px;
+  text-align: center;
+  height: 60px;
+  line-height: 60px;
+
+  position: relative;
+  background-image: -webkit-gradient(
+    linear,
+    left 0,
+    right 0,
+    from(#36c6d3),
+    to(#9bd7dc)
+  );
+  background-color: rgb(44, 53, 66);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  // &::after {
+  //   content: "";
+  //   display: inline-block;
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   background: linear-gradient(#36c6d3, #9bd7dc);
+  //   z-index: 0;
+  // }
+}
